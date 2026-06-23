@@ -1,5 +1,5 @@
-```python
 scholarships = []
+favorites = []
 
 try:
     with open("scholarships.txt", "r") as file:
@@ -14,7 +14,9 @@ while True:
     print("2. View Scholarships")
     print("3. Search Scholarship")
     print("4. Filter By Country")
-    print("5. Exit")
+    print("5. Add To Favorites")
+    print("6. View Favorites")
+    print("7. Exit")
 
     choice = input("Choose an option: ")
 
@@ -68,9 +70,24 @@ while True:
             print("No scholarships found.")
 
     elif choice == "5":
+        scholarship = input("Enter scholarship name to favorite: ")
+
+        favorites.append(scholarship)
+
+        print("Added to favorites!")
+
+    elif choice == "6":
+        print("\nFavorite Scholarships:")
+
+        if not favorites:
+            print("No favorites yet.")
+        else:
+            for scholarship in favorites:
+                print("-", scholarship)
+
+    elif choice == "7":
         print("Goodbye!")
         break
 
     else:
         print("Invalid choice.")
-```
