@@ -1,10 +1,20 @@
+```python
 scholarships = []
 favorites = []
 
+# Load scholarships
 try:
     with open("scholarships.txt", "r") as file:
         for line in file:
             scholarships.append(line.strip())
+except FileNotFoundError:
+    pass
+
+# Load favorites
+try:
+    with open("favorites.txt", "r") as file:
+        for line in file:
+            favorites.append(line.strip())
 except FileNotFoundError:
     pass
 
@@ -74,6 +84,9 @@ while True:
 
         favorites.append(scholarship)
 
+        with open("favorites.txt", "a") as file:
+            file.write(scholarship + "\n")
+
         print("Added to favorites!")
 
     elif choice == "6":
@@ -91,3 +104,4 @@ while True:
 
     else:
         print("Invalid choice.")
+```
