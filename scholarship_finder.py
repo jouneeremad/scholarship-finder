@@ -13,7 +13,8 @@ while True:
     print("1. Add Scholarship")
     print("2. View Scholarships")
     print("3. Search Scholarship")
-    print("4. Exit")
+    print("4. Filter By Country")
+    print("5. Exit")
 
     choice = input("Choose an option: ")
 
@@ -54,6 +55,19 @@ while True:
             print("No results found.")
 
     elif choice == "4":
+        country = input("Enter country: ").lower()
+
+        found = False
+
+        for scholarship in scholarships:
+            if country in scholarship.lower():
+                print(scholarship)
+                found = True
+
+        if not found:
+            print("No scholarships found.")
+
+    elif choice == "5":
         print("Goodbye!")
         break
 
