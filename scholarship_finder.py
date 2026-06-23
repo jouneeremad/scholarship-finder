@@ -1,3 +1,4 @@
+```python
 scholarships = []
 
 try:
@@ -19,8 +20,9 @@ while True:
     if choice == "1":
         name = input("Scholarship Name: ")
         country = input("Country: ")
+        deadline = input("Deadline (YYYY-MM-DD): ")
 
-        scholarship = f"{name} - {country}"
+        scholarship = f"{name} - {country} - {deadline}"
 
         scholarships.append(scholarship)
 
@@ -57,3 +59,4 @@ while True:
 
     else:
         print("Invalid choice.")
+```
